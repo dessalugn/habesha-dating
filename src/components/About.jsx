@@ -1,7 +1,14 @@
 import React from "react";
+import SubjectPage from "./SubjectPage";
 class About extends React.Component{
     render (){
-        return <h1>About</h1>
+        return (
+        <>
+        <p>About</p>            
+        <a href="/home">Home</a>
+        <SubjectPage/>
+        </>);
+       
     }
 }
 export default About;
