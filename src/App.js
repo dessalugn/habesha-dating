@@ -3,19 +3,20 @@ import React  from "react";
 import Home from "./components/Home";
 import About from "./components/About";
 import Header from "./components/Header";
-
-function App(){    
-
-   function getPage(){
-    const route=window.location.pathname;
-    if(route==="/home")return<Home/>
-    return <About/>
-   }
-
+import { Route, Routes ,Navigate} from "react-router-dom";
+import PageNotFound from "./components/PageNotFound";
+function App(){ 
    return (
     <div className="container-fluid">
-      <Header/>  
-      {getPage()}
+      <Header/> 
+      <Routes>
+        <Route path="/" exact element={<Home/>}/>  
+        <Route path="/home" element={<Home/>}/>  
+        <Route path="/about" element={<About/>}/>  
+        <Route path="/about-page" element={<Navigate replace to="/about" />} />
+        <Route path="*" element={<PageNotFound/>}/>  
+      </Routes>  
+      
     </div>
    );
 }
