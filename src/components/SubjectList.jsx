@@ -18,7 +18,7 @@ props.subjects.map(c=>{
  <tr key={c.id}>
  <th>{c.id}</th>
  <th>      
-      <Link to={"/home/"+c.slug}>{c.title}</Link>
+      <Link to={"/course/"+c.slug}>{c.title}</Link>
 </th>
  <th>{c.category}</th>
  <th>{c.slug}</th>
